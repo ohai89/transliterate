@@ -18,16 +18,22 @@ const danishNorwegianReplacements = [
 	['Å', 'Aa'],
 ];
 
+// Shared Swedish/Finnish replacements
+const swedishFinnishReplacements = [
+	['ä', 'a'],
+	['Ä', 'A'],
+	['ö', 'o'],
+	['Ö', 'O'],
+	['å', 'a'],
+	['Å', 'A'],
+];
+
 const localeReplacements = {
 	// Swedish
-	sv: [
-		['ä', 'a'],
-		['Ä', 'A'],
-		['ö', 'o'],
-		['Ö', 'O'],
-		['å', 'a'],
-		['Å', 'A'],
-	],
+	sv: swedishFinnishReplacements,
+
+	// Finnish
+	fi: swedishFinnishReplacements,
 
 	// Danish
 	da: danishNorwegianReplacements,

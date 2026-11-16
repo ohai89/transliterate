@@ -120,6 +120,10 @@ test('supports Dhivehi', () => {
 	assert.equal(transliterate('ޱ'), 'n');
 });
 
+test('supports Finnish', () => {
+	assert.equal(transliterate('ä ö Ä Ö', {locale: 'fi'}), 'a o A O');
+});
+
 test('supports Greek', () => {
 	assert.equal(transliterate('θ Γ Ξ'), 'th G KS');
 
@@ -189,6 +193,10 @@ test('locale option for language-specific transliteration', () => {
 	assert.equal(transliterate('Sju sjösjuka sjömän', {locale: 'sv'}), 'Sju sjosjuka sjoman');
 	assert.equal(transliterate('Räksmörgås', {locale: 'sv'}), 'Raksmorgas');
 	assert.equal(transliterate('Räksmörgås', {locale: 'sv-SE'}), 'Raksmorgas'); // Full locale tag
+
+	// Finnish
+	assert.equal(transliterate('Räksmörgås', {locale: 'fi'}), 'Raksmorgas');
+	assert.equal(transliterate('Räksmörgås', {locale: 'fi-FI'}), 'Raksmorgas'); // Full locale tag
 
 	// German (default behavior)
 	assert.equal(transliterate('Räksmörgås', {locale: 'de'}), 'Raeksmoergas');
